@@ -2,9 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <title>WebGL in Rust</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background-color: black;
+        margin: 0;
+        overflow: hidden;
+        width: 100vw;
+      }
+      #rustCanvas {
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
   </head>
   <body>
+    <canvas id="rustCanvas"></canvas>
     <script src="index.js"></script>
   </body>
 </html>
