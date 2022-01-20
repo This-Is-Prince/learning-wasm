@@ -1,0 +1,47 @@
+[package]
+name = "webgl-in-rust-2d-graphics"
+description = "WebGL in Rust 2D Graphics"
+version = "0.1.0"
+authors = ["Prince <this.is.kumar.prince@gmail.com>"]
+categories = ["wasm"]
+readme = "README.md"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+lto = true
+
+[features]
+#default = ["wee_alloc"]
+
+[dependencies]
+wee_alloc = { version = "0.4.5", optional = true }
+js-sys = "0.3.55"
+lazy_static = "1.4.0"
+nalgebra = "0.30.1"
+wasm-bindgen = "0.2.78"
+
+[dependencies.web-sys]
+version = "0.3.55"
+features = ['Document',
+    'Element',
+    'EventTarget',
+    'HtmlCanvasElement',
+    'MouseEvent',
+    'WebGlBuffer',
+    'WebGlProgram',
+    'WebGlRenderingContext',
+    'WebGlShader',
+    'WebGlUniformLocation',
+    'Window',"console"]
+
+[target."cfg(debug_assertions)".dependencies]
+console_error_panic_hook = "0.1.7"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.28"
+futures = "0.3.19"
+wasm-bindgen-futures = "0.4.28"
+
