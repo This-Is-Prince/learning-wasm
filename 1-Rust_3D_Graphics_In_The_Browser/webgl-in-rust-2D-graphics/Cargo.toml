@@ -13,11 +13,8 @@ crate-type = ["cdylib"]
 [profile.release]
 lto = true
 
-[features]
-#default = ["wee_alloc"]
-
 [dependencies]
-wee_alloc = { version = "0.4.5", optional = true }
+console_error_panic_hook = "0.1.7"
 js-sys = "0.3.55"
 lazy_static = "1.4.0"
 nalgebra = "0.30.1"
@@ -36,12 +33,3 @@ features = ['Document',
     'WebGlShader',
     'WebGlUniformLocation',
     'Window',"console"]
-
-[target."cfg(debug_assertions)".dependencies]
-console_error_panic_hook = "0.1.7"
-
-[dev-dependencies]
-wasm-bindgen-test = "0.3.28"
-futures = "0.3.19"
-wasm-bindgen-futures = "0.4.28"
-
